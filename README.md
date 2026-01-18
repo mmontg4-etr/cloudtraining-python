@@ -1,6 +1,6 @@
 # Python & Data Science Course
 
-A comprehensive beginner-to-advanced course covering Python fundamentals, NumPy, Matplotlib, Pandas, SciPy, and Boto3 (AWS) for data analysis and scientific computing.
+A comprehensive beginner-to-advanced course covering Python fundamentals, NumPy, Matplotlib, Pandas, SciPy, SQL, and Boto3 (AWS) for data analysis and scientific computing.
 
 ## Course Overview
 
@@ -13,9 +13,10 @@ A comprehensive beginner-to-advanced course covering Python fundamentals, NumPy,
 | 4 | Pandas | 6 notebooks | 17 questions |
 | 5 | SciPy | 4 notebooks | 12 questions |
 | 6 | Boto3/AWS | 4 notebooks | 12 questions |
-| 7 | Capstone Projects | 3 notebooks | - |
+| 7 | SQL in Python | 4 notebooks | 14 questions |
+| 99 | Capstone Projects | 3 notebooks | - |
 
-**Total: 38 learning items** (1 markdown guide + 37 notebooks) + **6 comprehensive tests**
+**Total: 42 learning items** (1 markdown guide + 41 notebooks) + **7 comprehensive tests**
 
 ## Prerequisites
 
@@ -83,7 +84,7 @@ Each learning notebook follows a consistent format:
 
 ### Comprehensive Tests
 
-Each module (1-6) includes a comprehensive test to assess your understanding:
+Each module (1-7) includes a comprehensive test to assess your understanding:
 
 | File | Description |
 |------|-------------|
@@ -98,7 +99,7 @@ Each module (1-6) includes a comprehensive test to assess your understanding:
 
 ### Capstone Projects
 
-Module 7 contains three capstone projects that integrate skills from multiple modules:
+Module 99 contains three capstone projects that integrate skills from multiple modules:
 
 1. **Data Analysis Project** - End-to-end analysis with Pandas and Matplotlib
 2. **Scientific Computing Project** - Numerical simulation with NumPy and SciPy
@@ -157,7 +158,13 @@ Module 7 contains three capstone projects that integrate skills from multiple mo
 3. Working with Other Services
 4. Practical Patterns
 
-### Module 7: Capstone Projects
+### Module 7: SQL in Python
+1. SQLite Basics - Connecting, creating databases and tables
+2. CRUD Operations - INSERT, SELECT, UPDATE, DELETE
+3. Queries and Joins - WHERE, ORDER BY, GROUP BY, JOINs
+4. Pandas SQL Integration - read_sql, to_sql, combined workflows
+
+### Module 99: Capstone Projects
 1. Data Analysis Project
 2. Scientific Computing Project
 3. Cloud Data Pipeline
@@ -177,7 +184,6 @@ cloudtraining-python/
 │   └── 01_jupyter_basics.ipynb
 ├── 01_python_fundamentals/
 │   ├── 01_variables_and_types.ipynb
-│   ├── 02_strings.ipynb
 │   ├── ... (10 learning notebooks)
 │   ├── test.ipynb                 # Module test (no solutions)
 │   └── test_solutions.ipynb       # Module test (with solutions)
@@ -201,7 +207,14 @@ cloudtraining-python/
 │   ├── ... (4 learning notebooks)
 │   ├── test.ipynb
 │   └── test_solutions.ipynb
-├── 07_capstone/
+├── 07_sql/
+│   ├── 01_sqlite_basics.ipynb
+│   ├── 02_crud_operations.ipynb
+│   ├── 03_queries_and_joins.ipynb
+│   ├── 04_pandas_sql_integration.ipynb
+│   ├── test.ipynb
+│   └── test_solutions.ipynb
+├── 99_capstone/
 │   ├── 01_data_analysis_project.ipynb
 │   ├── 02_scientific_computing_project.ipynb
 │   └── 03_cloud_data_pipeline.ipynb
