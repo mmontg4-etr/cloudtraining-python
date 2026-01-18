@@ -1,6 +1,6 @@
 # Python & Data Science Course
 
-A comprehensive beginner-to-advanced course covering Python fundamentals, NumPy, Matplotlib, Pandas, SciPy, SQL, and Boto3 (AWS) for data analysis and scientific computing.
+A comprehensive beginner-to-advanced course covering Python fundamentals, NumPy, Matplotlib, Pandas, SciPy, SQL, Django, and Boto3 (AWS) for data analysis, web development, and scientific computing.
 
 ## Course Overview
 
@@ -14,14 +14,15 @@ A comprehensive beginner-to-advanced course covering Python fundamentals, NumPy,
 | 5 | SciPy | 4 notebooks | 12 questions |
 | 6 | Boto3/AWS | 4 notebooks | 12 questions |
 | 7 | SQL in Python | 4 notebooks | 14 questions |
+| 8 | Django | 5 notebooks | 15 questions |
 | 99 | Capstone Projects | 3 notebooks | - |
 
-**Total: 42 learning items** (1 markdown guide + 41 notebooks) + **7 comprehensive tests**
+**Total: 47 learning items** (1 markdown guide + 46 notebooks) + **8 comprehensive tests**
 
 ## Prerequisites
 
 - No prior programming experience required for Module 1
-- Basic Python knowledge required for Modules 2-7
+- Basic Python knowledge required for Modules 2-8
 - AWS account required for Module 6 (free tier sufficient)
 
 ## Getting Started
@@ -84,7 +85,7 @@ Each learning notebook follows a consistent format:
 
 ### Comprehensive Tests
 
-Each module (1-7) includes a comprehensive test to assess your understanding:
+Each module (1-8) includes a comprehensive test to assess your understanding:
 
 | File | Description |
 |------|-------------|
@@ -164,6 +165,13 @@ Module 99 contains three capstone projects that integrate skills from multiple m
 3. Queries and Joins - WHERE, ORDER BY, GROUP BY, JOINs
 4. Pandas SQL Integration - read_sql, to_sql, combined workflows
 
+### Module 8: Django
+1. Django Introduction - Projects, apps, settings, and structure
+2. Models and ORM - Defining models, migrations, QuerySets
+3. Views and URLs - Function/class-based views, URL routing
+4. Templates - Django Template Language, inheritance, static files
+5. Forms and Admin - Form handling, ModelForms, admin customization
+
 ### Module 99: Capstone Projects
 1. Data Analysis Project
 2. Scientific Computing Project
@@ -212,6 +220,14 @@ cloudtraining-python/
 │   ├── 02_crud_operations.ipynb
 │   ├── 03_queries_and_joins.ipynb
 │   ├── 04_pandas_sql_integration.ipynb
+│   ├── test.ipynb
+│   └── test_solutions.ipynb
+├── 08_django/
+│   ├── 01_django_introduction.ipynb
+│   ├── 02_models_and_orm.ipynb
+│   ├── 03_views_and_urls.ipynb
+│   ├── 04_templates.ipynb
+│   ├── 05_forms_and_admin.ipynb
 │   ├── test.ipynb
 │   └── test_solutions.ipynb
 ├── 99_capstone/
