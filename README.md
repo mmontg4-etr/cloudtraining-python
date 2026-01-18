@@ -206,7 +206,7 @@ cloudtraining-python/
 │   ├── 02_scientific_computing_project.ipynb
 │   └── 03_cloud_data_pipeline.ipynb
 └── data/
-    └── (sample datasets for exercises)
+    └── (reserved for datasets - samples currently created inline)
 ```
 
 ---
