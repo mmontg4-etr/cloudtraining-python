@@ -4,18 +4,18 @@ A comprehensive beginner-to-advanced course covering Python fundamentals, NumPy,
 
 ## Course Overview
 
-| Module | Topic | Notebooks |
-|--------|-------|-----------|
-| 0 | Getting Started | 2 items |
-| 1 | Python Fundamentals | 10 notebooks |
-| 2 | NumPy | 5 notebooks |
-| 3 | Matplotlib | 4 notebooks |
-| 4 | Pandas | 6 notebooks |
-| 5 | SciPy | 4 notebooks |
-| 6 | Boto3/AWS | 4 notebooks |
-| 7 | Capstone Projects | 3 notebooks |
+| Module | Topic | Notebooks | Test |
+|--------|-------|-----------|------|
+| 0 | Getting Started | 2 items | - |
+| 1 | Python Fundamentals | 10 notebooks | 20 questions |
+| 2 | NumPy | 5 notebooks | 15 questions |
+| 3 | Matplotlib | 4 notebooks | 12 questions |
+| 4 | Pandas | 6 notebooks | 17 questions |
+| 5 | SciPy | 4 notebooks | 12 questions |
+| 6 | Boto3/AWS | 4 notebooks | 12 questions |
+| 7 | Capstone Projects | 3 notebooks | - |
 
-**Total: 38 items** (1 markdown guide + 37 notebooks)
+**Total: 38 learning items** (1 markdown guide + 37 notebooks) + **6 comprehensive tests**
 
 ## Prerequisites
 
@@ -23,24 +23,88 @@ A comprehensive beginner-to-advanced course covering Python fundamentals, NumPy,
 - Basic Python knowledge required for Modules 2-7
 - AWS account required for Module 6 (free tier sufficient)
 
-## Installation
+## Getting Started
 
-See [00_getting_started/00_installation_guide.md](00_getting_started/00_installation_guide.md) for detailed setup instructions.
+### Option 1: GitHub Codespaces (Recommended)
 
-**Quick Start (Anaconda recommended):**
+The fastest way to start - no local installation required:
+
+1. Click the green **Code** button above
+2. Select the **Codespaces** tab
+3. Click **Create codespace on main**
+4. Wait 1-2 minutes for the environment to build
+5. Open any `.ipynb` file to begin
+
+### Option 2: Local Installation (Python + pip)
+
 ```bash
-# Install Anaconda from https://www.anaconda.com/download
+# Clone the repository
+git clone https://github.com/mmontg4-etr/cloudtraining-python.git
+cd cloudtraining-python
 
-# Create environment
-conda create -n datasci python=3.11
+# Create virtual environment
+python -m venv venv
 
-# Activate environment
-conda activate datasci
+# Activate (Windows)
+venv\Scripts\activate
+
+# Activate (macOS/Linux)
+source venv/bin/activate
 
 # Install packages
-conda install numpy pandas matplotlib scipy jupyter
-pip install boto3
+pip install -r requirements.txt
+
+# Launch Jupyter
+jupyter notebook
 ```
+
+See [00_getting_started/00_installation_guide.md](00_getting_started/00_installation_guide.md) for detailed setup instructions and troubleshooting.
+
+---
+
+## How to Use This Repository
+
+### Learning Path
+
+1. **Start from Module 0** if you're new to Python or Jupyter
+2. **Work through notebooks sequentially** within each module - concepts build on each other
+3. **Run all code cells** yourself - typing code improves retention
+4. **Complete the exercises** in each notebook before checking the solutions
+
+### Notebook Structure
+
+Each learning notebook follows a consistent format:
+
+1. **Learning Objectives** - What you'll learn
+2. **Concepts** - Explanations with runnable examples
+3. **Exercises** - Practice problems (3-5 per notebook)
+4. **Solutions** - Collapsed/hidden solutions (click to reveal)
+5. **Summary** - Key takeaways and next steps
+
+### Comprehensive Tests
+
+Each module (1-6) includes a comprehensive test to assess your understanding:
+
+| File | Description |
+|------|-------------|
+| `test.ipynb` | Test questions **without solutions** - complete this to test yourself |
+| `test_solutions.ipynb` | The same test **with complete solutions** - review after attempting |
+
+**Recommended workflow:**
+1. Complete all notebooks in a module
+2. Open `test.ipynb` and attempt all questions without referring to the lessons
+3. Check your answers against `test_solutions.ipynb`
+4. Review any topics where you struggled before moving to the next module
+
+### Capstone Projects
+
+Module 7 contains three capstone projects that integrate skills from multiple modules:
+
+1. **Data Analysis Project** - End-to-end analysis with Pandas and Matplotlib
+2. **Scientific Computing Project** - Numerical simulation with NumPy and SciPy
+3. **Cloud Data Pipeline** - AWS integration with Boto3
+
+---
 
 ## Course Structure
 
@@ -98,51 +162,54 @@ pip install boto3
 2. Scientific Computing Project
 3. Cloud Data Pipeline
 
-## Notebook Structure
-
-Each notebook follows a consistent format:
-
-1. **Learning Objectives** - What you'll learn
-2. **Concepts** - Explanations with examples
-3. **Exercises** - Practice problems (3-5 per notebook)
-4. **Solutions** - Collapsed/hidden solutions
-5. **Summary** - Key takeaways
+---
 
 ## Directory Structure
 
 ```
-python_learning/
+cloudtraining-python/
 ├── README.md
+├── requirements.txt
+├── .devcontainer/
+│   └── devcontainer.json          # GitHub Codespaces configuration
 ├── 00_getting_started/
 │   ├── 00_installation_guide.md
 │   └── 01_jupyter_basics.ipynb
 ├── 01_python_fundamentals/
 │   ├── 01_variables_and_types.ipynb
 │   ├── 02_strings.ipynb
-│   └── ... (10 notebooks)
+│   ├── ... (10 learning notebooks)
+│   ├── test.ipynb                 # Module test (no solutions)
+│   └── test_solutions.ipynb       # Module test (with solutions)
 ├── 02_numpy/
-│   └── ... (5 notebooks)
+│   ├── ... (5 learning notebooks)
+│   ├── test.ipynb
+│   └── test_solutions.ipynb
 ├── 03_matplotlib/
-│   └── ... (4 notebooks)
+│   ├── ... (4 learning notebooks)
+│   ├── test.ipynb
+│   └── test_solutions.ipynb
 ├── 04_pandas/
-│   └── ... (6 notebooks)
+│   ├── ... (6 learning notebooks)
+│   ├── test.ipynb
+│   └── test_solutions.ipynb
 ├── 05_scipy/
-│   └── ... (4 notebooks)
+│   ├── ... (4 learning notebooks)
+│   ├── test.ipynb
+│   └── test_solutions.ipynb
 ├── 06_boto3/
-│   └── ... (4 notebooks)
+│   ├── ... (4 learning notebooks)
+│   ├── test.ipynb
+│   └── test_solutions.ipynb
 ├── 07_capstone/
-│   └── ... (3 notebooks)
+│   ├── 01_data_analysis_project.ipynb
+│   ├── 02_scientific_computing_project.ipynb
+│   └── 03_cloud_data_pipeline.ipynb
 └── data/
     └── (sample datasets for exercises)
 ```
 
-## How to Use This Course
-
-1. **Start from Module 0** if you're new to Python/Jupyter
-2. **Work through notebooks sequentially** - concepts build on each other
-3. **Run all code cells** - type them yourself for better retention
-4. **Complete the exercises** - check solutions only after attempting
-5. **Build the capstone projects** - apply your skills to real problems
+---
 
 ## License
 
