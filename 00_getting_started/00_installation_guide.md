@@ -2,111 +2,120 @@
 
 This guide walks you through setting up Python and Jupyter for this course.
 
-## Option 1: Anaconda (Recommended for Beginners)
+---
 
-Anaconda is a Python distribution that includes most packages needed for data science.
+## Option 1: GitHub Codespaces (Recommended)
 
-### Step 1: Download Anaconda
+GitHub Codespaces provides a complete, pre-configured development environment in your browser. No local installation required.
 
-1. Go to [https://www.anaconda.com/download](https://www.anaconda.com/download)
-2. Download the installer for your operating system (Windows, macOS, or Linux)
-3. Choose Python 3.11 or later
+### Step 1: Open the Repository in Codespaces
 
-### Step 2: Install Anaconda
+1. Go to the repository: [cloudtraining-python](https://github.com/mmontg4-etr/cloudtraining-python)
+2. Click the green **Code** button
+3. Select the **Codespaces** tab
+4. Click **Create codespace on main**
 
-**Windows:**
-- Run the downloaded `.exe` file
-- Follow the installation wizard
-- Check "Add Anaconda to PATH" (optional but convenient)
+### Step 2: Wait for Environment Setup
 
-**macOS:**
-- Open the downloaded `.pkg` file
-- Follow the installation wizard
+The codespace will automatically:
+- Set up a Python environment
+- Install required packages
+- Configure Jupyter
 
-**Linux:**
-```bash
-bash Anaconda3-*-Linux-x86_64.sh
-```
-Follow the prompts and accept the license.
+This takes 1-2 minutes on first launch.
 
-### Step 3: Verify Installation
+### Step 3: Open Notebooks
 
-Open a terminal (or Anaconda Prompt on Windows) and run:
-```bash
-conda --version
-python --version
-```
+Once ready, you can:
+- Open `.ipynb` files directly (VS Code's Jupyter extension is pre-installed)
+- Or run `jupyter notebook` in the terminal for the classic interface
 
-You should see version numbers displayed.
+### Benefits of Codespaces
 
-### Step 4: Create a Course Environment (Recommended)
-
-Creating a dedicated environment keeps your course packages isolated:
-
-```bash
-# Create environment
-conda create -n datasci python=3.11
-
-# Activate environment
-conda activate datasci
-
-# Install required packages
-conda install numpy pandas matplotlib scipy jupyter
-
-# Install boto3 for AWS module
-pip install boto3
-```
-
-### Step 5: Launch Jupyter
-
-```bash
-# Activate your environment (if not already active)
-conda activate datasci
-
-# Launch Jupyter Notebook
-jupyter notebook
-```
-
-This will open Jupyter in your web browser.
+- **Zero setup** - Everything is pre-configured
+- **Consistent environment** - Same setup for everyone
+- **Cloud-based** - Work from any device with a browser
+- **Free tier available** - 60 hours/month for free GitHub accounts
 
 ---
 
-## Option 2: pip (For Experienced Users)
+## Option 2: Local Installation (Python + pip)
 
-If you already have Python installed, you can use pip.
+Install Python and packages locally on your machine.
 
-### Step 1: Verify Python Installation
+### Step 1: Install Python
 
+**Windows:**
+1. Go to [python.org/downloads](https://www.python.org/downloads/)
+2. Download Python 3.11 or later
+3. Run the installer
+4. **Important:** Check "Add Python to PATH" during installation
+
+**macOS:**
+```bash
+# Using Homebrew (recommended)
+brew install python@3.11
+
+# Or download from python.org
+```
+
+**Linux (Ubuntu/Debian):**
+```bash
+sudo apt update
+sudo apt install python3.11 python3.11-venv python3-pip
+```
+
+### Step 2: Verify Python Installation
+
+Open a terminal and run:
 ```bash
 python --version
+# or on some systems:
+python3 --version
 ```
 
-Ensure you have Python 3.8 or later.
+You should see `Python 3.11.x` or later.
 
-### Step 2: Create a Virtual Environment
+### Step 3: Create a Virtual Environment
+
+Creating a virtual environment keeps your course packages isolated:
 
 ```bash
-# Create virtual environment
-python -m venv datasci
+# Navigate to where you want the project
+cd ~/projects
 
-# Activate (Windows)
-datasci\Scripts\activate
+# Clone the repository
+git clone https://github.com/mmontg4-etr/cloudtraining-python.git
+cd cloudtraining-python
+
+# Create virtual environment
+python -m venv venv
+
+# Activate (Windows Command Prompt)
+venv\Scripts\activate
+
+# Activate (Windows PowerShell)
+venv\Scripts\Activate.ps1
 
 # Activate (macOS/Linux)
-source datasci/bin/activate
+source venv/bin/activate
 ```
 
-### Step 3: Install Packages
+When activated, you'll see `(venv)` at the start of your terminal prompt.
+
+### Step 4: Install Required Packages
 
 ```bash
 pip install numpy pandas matplotlib scipy jupyter boto3
 ```
 
-### Step 4: Launch Jupyter
+### Step 5: Launch Jupyter
 
 ```bash
 jupyter notebook
 ```
+
+This will open Jupyter in your default web browser.
 
 ---
 
@@ -114,7 +123,7 @@ jupyter notebook
 
 | Package | Version | Purpose |
 |---------|---------|---------|
-| Python | 3.8+ | Programming language |
+| Python | 3.10+ | Programming language |
 | NumPy | 1.20+ | Numerical computing |
 | Pandas | 1.3+ | Data manipulation |
 | Matplotlib | 3.4+ | Visualization |
@@ -122,13 +131,13 @@ jupyter notebook
 | Jupyter | Latest | Interactive notebooks |
 | boto3 | Latest | AWS SDK |
 
-### Installing Additional Packages Later
+### Installing Additional Packages
 
 ```bash
-# With conda
-conda install package_name
+# Always activate your environment first
+source venv/bin/activate  # or venv\Scripts\activate on Windows
 
-# With pip
+# Install with pip
 pip install package_name
 ```
 
@@ -164,35 +173,40 @@ print("\nAll packages installed successfully!")
 
 ## Troubleshooting
 
-### "conda not found" error
-- Windows: Use "Anaconda Prompt" instead of regular command prompt
-- Mac/Linux: Run `source ~/.bashrc` or restart your terminal
-
 ### "python not found" error
 - Ensure Python is added to your PATH
 - Try `python3` instead of `python`
+- Windows: Reinstall Python and check "Add Python to PATH"
+
+### "pip not found" error
+- Try `python -m pip` instead of `pip`
+- Or `python3 -m pip` on some systems
+
+### Virtual environment won't activate (PowerShell)
+- Run: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
+- Then try activating again
 
 ### Package import errors
-- Ensure your environment is activated: `conda activate datasci`
-- Reinstall the package: `conda install package_name`
+- Ensure your virtual environment is activated (look for `(venv)` in prompt)
+- Reinstall the package: `pip install package_name`
 
 ### Jupyter won't start
 - Check if Jupyter is installed: `jupyter --version`
-- Reinstall: `conda install jupyter` or `pip install jupyter`
+- Reinstall: `pip install jupyter`
 
 ### Permission errors
 - Windows: Run terminal as Administrator
-- Mac/Linux: Use `sudo` or fix directory permissions
+- Mac/Linux: Don't use `sudo` with pip in a virtual environment
 
 ---
 
-## IDE Alternatives (Optional)
+## IDE Options
 
 While this course uses Jupyter notebooks, you can also use:
 
-- **VS Code** - Install the Python and Jupyter extensions
-- **PyCharm** - Full-featured Python IDE
-- **JupyterLab** - Next-generation Jupyter interface (`jupyter lab`)
+- **VS Code** - Install the Python and Jupyter extensions (recommended)
+- **PyCharm** - Full-featured Python IDE with Jupyter support
+- **JupyterLab** - Enhanced Jupyter interface: `pip install jupyterlab` then `jupyter lab`
 
 ---
 
