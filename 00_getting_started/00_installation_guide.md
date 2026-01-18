@@ -174,13 +174,55 @@ print("\nAll packages installed successfully!")
 ## Troubleshooting
 
 ### "python not found" error
-- Ensure Python is added to your PATH
 - Try `python3` instead of `python`
-- Windows: Reinstall Python and check "Add Python to PATH"
+- Try `py` instead of `python` (Windows Python Launcher)
+- If Python is installed but not found, you need to add it to your PATH (see below)
+
+### Adding Python to PATH (Windows - No Admin Rights Required)
+
+If Python is installed but the terminal can't find it, you need to add it to your user PATH:
+
+**Step 1: Find where Python is installed**
+
+Open Command Prompt or PowerShell and run:
+```cmd
+where python
+```
+or
+```cmd
+where py
+```
+
+This will show the Python location, such as:
+- `C:\Users\YourName\AppData\Local\Programs\Python\Python311\python.exe`
+- `C:\Users\YourName\AppData\Local\Microsoft\WindowsApps\python.exe`
+
+**Step 2: Open User Environment Variables**
+
+1. Press `Windows + R` to open Run dialog
+2. Type `rundll32.exe sysdm.cpl,EditEnvironmentVariables` and press Enter
+3. This opens Environment Variables *for your user only* (no admin needed)
+
+**Step 3: Edit the PATH variable**
+
+1. In the **User variables** section (top half), find and select `Path`
+2. Click **Edit**
+3. Click **New** and add the Python folder path (without `python.exe`), e.g.:
+   - `C:\Users\YourName\AppData\Local\Programs\Python\Python311\`
+   - `C:\Users\YourName\AppData\Local\Programs\Python\Python311\Scripts\`
+4. Click **OK** to save
+
+**Step 4: Restart your terminal**
+
+Close and reopen Command Prompt or PowerShell, then verify:
+```cmd
+python --version
+```
 
 ### "pip not found" error
 - Try `python -m pip` instead of `pip`
 - Or `python3 -m pip` on some systems
+- Add the `Scripts` folder to PATH (see above): `...\Python311\Scripts\`
 
 ### Virtual environment won't activate (PowerShell)
 - Run: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
@@ -193,10 +235,12 @@ print("\nAll packages installed successfully!")
 ### Jupyter won't start
 - Check if Jupyter is installed: `jupyter --version`
 - Reinstall: `pip install jupyter`
+- If still not found, run: `python -m jupyter notebook`
 
-### Permission errors
-- Windows: Run terminal as Administrator
-- Mac/Linux: Don't use `sudo` with pip in a virtual environment
+### Permission errors on Windows (no admin rights)
+- Always use virtual environments - they install to your user folder
+- Never need admin rights when working inside a virtual environment
+- If you get permission errors, ensure you're in an activated venv
 
 ---
 
