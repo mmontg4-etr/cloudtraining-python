@@ -15,9 +15,9 @@ A comprehensive beginner-to-advanced course covering Python fundamentals, NumPy,
 | 6 | Boto3/AWS | 4 notebooks | 12 questions |
 | 7 | SQL in Python | 4 notebooks | 14 questions |
 | 8 | Django | 5 notebooks | 15 questions |
-| 99 | Capstone Projects | 3 notebooks | - |
+| 99 | Capstone Projects | 6 notebooks | - |
 
-**Total: 47 learning items** (1 markdown guide + 46 notebooks) + **8 comprehensive tests**
+**Total: 50 learning items** (1 markdown guide + 49 notebooks) + **8 comprehensive tests**
 
 ## Prerequisites
 
@@ -100,11 +100,14 @@ Each module (1-8) includes a comprehensive test to assess your understanding:
 
 ### Capstone Projects
 
-Module 99 contains three capstone projects that integrate skills from multiple modules:
+Module 99 contains six capstone projects that integrate skills from multiple modules:
 
 1. **Data Analysis Project** - End-to-end analysis with Pandas and Matplotlib
 2. **Scientific Computing Project** - Numerical simulation with NumPy and SciPy
 3. **Cloud Data Pipeline** - AWS integration with Boto3
+4. **Django Web Application** - Complete CRUD app with models, views, templates, forms
+5. **Database Analytics Dashboard** - SQL + Pandas + Matplotlib visualization
+6. **Full-Stack Data Application** - Django + SQL + Pandas + Matplotlib integrated
 
 ---
 
@@ -173,9 +176,12 @@ Module 99 contains three capstone projects that integrate skills from multiple m
 5. Forms and Admin - Form handling, ModelForms, admin customization
 
 ### Module 99: Capstone Projects
-1. Data Analysis Project
-2. Scientific Computing Project
-3. Cloud Data Pipeline
+1. Data Analysis Project - Pandas, Matplotlib
+2. Scientific Computing Project - NumPy, SciPy
+3. Cloud Data Pipeline - Boto3, AWS
+4. Django Web Application - Django full CRUD
+5. Database Analytics Dashboard - SQL, Pandas, Matplotlib
+6. Full-Stack Data Application - Django, SQL, Pandas, Matplotlib
 
 ---
 
@@ -233,7 +239,10 @@ cloudtraining-python/
 ├── 99_capstone/
 │   ├── 01_data_analysis_project.ipynb
 │   ├── 02_scientific_computing_project.ipynb
-│   └── 03_cloud_data_pipeline.ipynb
+│   ├── 03_cloud_data_pipeline.ipynb
+│   ├── 04_django_web_application.ipynb
+│   ├── 05_database_analytics_dashboard.ipynb
+│   └── 06_fullstack_data_application.ipynb
 └── data/
     └── (reserved for datasets - samples currently created inline)
 ```
